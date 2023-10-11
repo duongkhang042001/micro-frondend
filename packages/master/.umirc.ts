@@ -50,7 +50,7 @@ export default defineConfig({
     },
     {
       name: 'App',
-      path: '/app/*',
+      path: '/app',
       microApp: 'app',
       icon: 'appstore',
       settings: {
@@ -59,15 +59,7 @@ export default defineConfig({
       microAppProps: {
         autoSetLoading: true,
         autoCaptureError: true,
-        className: 'sub-app',
-        wrapperClassName: 'wrapper-app',
       },
-    },
-    {
-      name: 'App 2',
-      path: '/app2/*',
-      microApp: 'app2',
-      icon: 'appstore',
     },
   ],
   qiankun: {
@@ -76,13 +68,7 @@ export default defineConfig({
       prefetch: true,
     },
   },
-  proxy: {
-    '/api': {
-      target: 'http://localhost:8000',
-      changeOrigin: true,
-      pathRewrite: { '^/api': '' },
-    },
-  },
+  proxy: {},
   mfsu: false,
   npmClient: 'npm',
 });

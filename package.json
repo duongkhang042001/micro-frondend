@@ -4,13 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "install:master": "cd packages/master && npm install",
-    "install:sub-app": "cd packages/sub-boilerplate && npm install",
     "install": "npm-run-all --parallel install:*",
     "start:master": "cd packages/master && npm start",
-    "start:sub-boilerplate": "cd packages/sub-boilerplate && npm start",
-    "start:sub-umijs": "cd packages/sub-umijs && npm start",
     "start": "npm-run-all --parallel start:*"
   },
   "author": "",

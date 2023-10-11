@@ -1,4 +1,4 @@
-import { RunTimeLayoutConfig } from '@umijs/max';
+import { RequestConfig, RunTimeLayoutConfig } from '@umijs/max';
 
 export async function getInitialState(): Promise<{ name: string }> {
   return { name: '@umijs/max' };
@@ -11,31 +11,24 @@ export const layout: RunTimeLayoutConfig = () => {
       locale: false,
     },
     layout: 'top',
-    splitMenus: true,
-    appList: [
-      {
-        title: 'Microsoft Azure',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png',
-        desc: 'Microsoft Azure',
-        url: '/',
-        target: '_blank',
-      },
-    ],
-    headerRender(props, defaultDom) {
-      return defaultDom;
-    },
   };
 };
 
 export const qiankun = {
   apps: [
     {
-      name: 'app',
       entry: '//localhost:8001',
-    },
-    {
-      name: 'app2',
-      entry: '//localhost:8002',
+      name: 'app',
     },
   ],
+};
+
+export const request: RequestConfig = {
+  timeout: 1000,
+  errorConfig: {
+    errorHandler() {},
+    errorThrower() {},
+  },
+  requestInterceptors: [],
+  responseInterceptors: [],
 };
