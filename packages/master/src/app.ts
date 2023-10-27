@@ -1,4 +1,5 @@
 import { RequestConfig, RunTimeLayoutConfig } from '@umijs/max';
+import { useState } from 'react';
 
 export async function getInitialState(): Promise<{ name: string }> {
   return { name: '@umijs/max' };
@@ -6,11 +7,22 @@ export async function getInitialState(): Promise<{ name: string }> {
 
 export const layout: RunTimeLayoutConfig = () => {
   return {
-    logo: false,
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Windows_logo_-_2021.svg/1024px-Windows_logo_-_2021.svg.png',
     menu: {
       locale: false,
     },
     layout: 'top',
+  };
+};
+
+export const useQiankunStateForSlave = () => {
+  const [globalState, setGlobalState] = useState<any>({
+    slogan: 'Hello MicroFrontend',
+  });
+
+  return {
+    globalState,
+    setGlobalState,
   };
 };
 
@@ -19,6 +31,9 @@ export const qiankun = {
     {
       entry: '//localhost:8001',
       name: 'app',
+      props: {
+        token: 'XXXXXX',
+      },
     },
   ],
 };
@@ -26,8 +41,12 @@ export const qiankun = {
 export const request: RequestConfig = {
   timeout: 1000,
   errorConfig: {
-    errorHandler() {},
-    errorThrower() {},
+    errorHandler() {
+      console.log('error handler');
+    },
+    errorThrower() {
+      console.log('error rhrower');
+    },
   },
   requestInterceptors: [],
   responseInterceptors: [],

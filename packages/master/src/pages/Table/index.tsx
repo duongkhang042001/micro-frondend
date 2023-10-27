@@ -1,6 +1,7 @@
 import { DownOutlined } from '@ant-design/icons';
 import type { ProColumns } from '@ant-design/pro-components';
 import { ProTable, TableDropdown } from '@ant-design/pro-components';
+import { useModel } from '@umijs/max';
 import { Button } from 'antd';
 
 const valueEnum: any = {
@@ -98,27 +99,31 @@ const columns: ProColumns<TableListItem>[] = [
 ];
 
 export default () => {
+    const { users } = useModel('userModel')
     return (
-        <ProTable<TableListItem>
-            dataSource={tableListDataSource}
-            rowKey="key"
-            pagination={{
-                showQuickJumper: true,
-            }}
-            columns={columns}
-            search={false}
-            dateFormatter="string"
-            headerTitle="表格标题"
-            toolBarRender={() => [
-                <Button key="show">查看日志</Button>,
-                <Button key="out">
-                    导出数据
-                    <DownOutlined />
-                </Button>,
-                <Button type="primary" key="primary">
-                    创建应用
-                </Button>,
-            ]}
-        />
+        <>
+            {users}
+            <ProTable<TableListItem>
+                dataSource={tableListDataSource}
+                rowKey="key"
+                pagination={{
+                    showQuickJumper: true,
+                }}
+                columns={columns}
+                search={false}
+                dateFormatter="string"
+                headerTitle="表格标题"
+                toolBarRender={() => [
+                    <Button key="show">查看日志</Button>,
+                    <Button key="out">
+                        导出数据
+                        <DownOutlined />
+                    </Button>,
+                    <Button type="primary" key="primary">
+                        创建应用
+                    </Button>,
+                ]}
+            />
+        </>
     );
 };
