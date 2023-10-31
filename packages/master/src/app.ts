@@ -12,6 +12,12 @@ export const layout: RunTimeLayoutConfig = () => {
       locale: false,
     },
     layout: 'top',
+    childrenRender: (children: any, props: any) => {
+      console.log({ props });
+      console.log({ children });
+
+      return children;
+    },
   };
 };
 

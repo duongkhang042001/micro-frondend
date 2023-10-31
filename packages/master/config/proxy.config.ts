@@ -1,9 +1,8 @@
 export default {
   dev: {
-    '/api': {
-      target: 'http://jsonplaceholder.typicode.com/',
+    '/v1/': {
+      target: 'http://10.151.130.102/',
       changeOrigin: true,
-      pathRewrite: { '^/api': '' },
     },
   },
   test: {

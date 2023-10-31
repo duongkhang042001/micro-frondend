@@ -11,4 +11,7 @@
  * @doc https://umijs.org/docs/guides/routes
  */
 
-export default [];
+export default [
+  { path: '/', name: 'Home', component: './Home' },
+  { path: '/micro/*', name: 'Micro', microApp: 'app' },
+];

@@ -18,7 +18,7 @@ export default defineConfig({
       },
     },
     dark: false,
-    compact: true,
+    compact: false,
     style: 'less',
     appConfig: {},
     styleProvider: {
@@ -50,10 +50,10 @@ export default defineConfig({
   },
   qiankun: {
     master: {
-      // sandbox: true,
-      // prefetch: true,
-      // defaultErrorBoundary: '@/defaultErrorBoundary',
-      // defaultLoader: '',
+      sandbox: true,
+      prefetch: true,
+      defaultErrorBoundary: '@/components/Errors',
+      defaultLoader: '@/components/Loading',
     },
   },
   tailwindcss: {},
