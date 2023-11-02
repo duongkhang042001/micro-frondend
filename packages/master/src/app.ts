@@ -15,7 +15,6 @@ export const layout: RunTimeLayoutConfig = () => {
     childrenRender: (children: any, props: any) => {
       console.log({ props });
       console.log({ children });
-
       return children;
     },
   };
