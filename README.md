@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project Setup and Installation
 
 To manage project dependencies, make sure to install [pnpm](https://pnpm.io/) first:
@@ -25,3 +26,7 @@ Copy code
 
 You can copy and paste this content into your README.md file.
 ```
+=======
+# micro-frondend
+npm install -> npm start
+>>>>>>> 2f463ab89028e52dd22d1d7a5991790e22373c45
