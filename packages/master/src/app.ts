@@ -13,8 +13,7 @@ export const layout: RunTimeLayoutConfig = () => {
     },
     layout: 'top',
     childrenRender: (children: any, props: any) => {
-      console.log({ props });
-      console.log({ children });
+      console.log({ children, props });
       return children;
     },
   };

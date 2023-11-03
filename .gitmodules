@@ -1,3 +1,0 @@
-[submodule "packages/slave-app"]
-	path = packages/slave-app
-	url = git@github.com:duongkhang042001/slave-microapp.git
