@@ -1,3 +1,1 @@
-declare namespace API {
-    
-}
+declare namespace API {}

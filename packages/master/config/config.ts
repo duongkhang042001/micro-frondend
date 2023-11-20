@@ -50,10 +50,10 @@ export default defineConfig({
   },
   qiankun: {
     master: {
-      sandbox: true,
+      // sandbox: true,
       prefetch: true,
-      defaultErrorBoundary: '@/components/Errors',
-      defaultLoader: '@/components/Loading',
+      // defaultErrorBoundary: '@/components/Errors',
+      // defaultLoader: '@/components/Loading',
     },
   },
   tailwindcss: {},

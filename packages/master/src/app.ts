@@ -11,7 +11,7 @@ export const layout: RunTimeLayoutConfig = () => {
     menu: {
       locale: false,
     },
-    layout: 'top',
+    layout: 'mix',
     childrenRender: (children: any, props: any) => {
       console.log({ children, props });
       return children;
